@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Basics part-4</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Javascript Basics part-4</h1>
+    <h2>@ Loops</h2>
+    for (let i = 100; i >= 0; i=i-10){
+        console.log(i);
+    }
+    <h3>@ Infinite Loop</h3>
+    for (let i = 10; i >= 0; i=i+10){
+        console.log(i);
+    }
+    <h3>@ Looping over array </h3>
+
+    var array = ["red", "pink", "blue", "green", "yellow", "white", "black", "orange"];
+    for (let i = 0; i <=array.length; i++){
+        console.log(array[i].toUpperCase());
+    }
+    for (let i = array.length-1; i >= 0; i=i-1){
+        console.log(array[i])
+    }
+    <hr>
+    <h3>@ Nested Loop</h3>
+    var array1 = [["one","two","three"],["four","five","six"],["seven","eight","nine"]
+
+]
+console.log(array1);
+console.log(array1[1]);
+for (let i = 0; i <= array1.length; i++){
+    for (let j = 0; j<= array1.length-1; j++){
+        console.log(array1[i][j])
+    }
+   
+}
+<hr>
+<h3>@ while loop</h3>
+const secreteCode= "hey";
+let userInput = prompt("Enter the code ?");
+while (userInput !== secreteCode) {
+    userInput = prompt("Enter the code ?");
+}
+console.log("Congrats ! your code is right.)
+
+
+<hr>
+<h3>@ break</h3>
+let input = prompt("Hey ! say something !");
+while (true) {
+    input = prompt(input);
+    if (input == "stop copying me") {
+        break;
+    }
+}
+console.log("Ok ! you win")
+
+<hr>
+<h3>@Guessing Game </h3>
+let maximum = parseInt(prompt("Enter the maximum number?"));
+console.log(maximum);
+while (!maximum) {
+    maximum=parseInt(prompt("Enter the valid input ."))
+    
+}
+
+const targetNumber = parseInt(Math.floor(Math.random()*maximum)+1);
+console.log(targetNumber);
+let userInput = prompt("Enter the guess?");
+while (userInput != targetNumber) {
+    userInput = prompt("Enter the guess?");
+    
+    if (userInput <targetNumber) {
+       var showMessage=alert("The number is too small. ")
+    }
+    else if (userInput >targetNumber) {
+       var showMessage=alert(" The number is too big .")
+    } else {
+       var showMessage=alert("Ok ! you got it .")
+    }
+
+}
+console.log("Ok , Bye")
+
+
+<hr>
+<h3>@ for loop</h3>
+
+const personName = ["vaishnavi", "neha", "sonal", "payal", "trupti"];
+
+for (let a = 0; a < personName.length; a++){
+    console.log(personName[a])
+}
+
+let b = 0;
+while (b < personName.length) {
+    console.log(personName[b]);
+    b = b + 1;
+}
+for (let b of personName){
+    console.log(b)
+}
+
+
+
+const name1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+for (let i = 0; i < name1.length; i++){
+    for (let j = 0; j < name1.length; j++){
+        console.log(name1[i][j])
+        
+    }
+    
+}
+
+for (let x of name1) {
+    for (let y of x) {
+        console.log(y)
+    }
+}
+<hr>
+<h3>@Iterating over objects</h3>
+const object1 = {
+    "vaishnavi": 25,
+    "neha": 12,
+    "sonal": 47,
+    "payal": 12,
+    "jahnavi": 0,
+    "ekta":85
+}
+
+for (let a in object) {
+    console.log(a)
+}
+
+for (let a in object1) {
+    console.log(`${a} scored ${object1[a]}`)
+}
+ 
+console.log(Object.keys(object1));
+console.log(Object.values(object1));
+console.log(Object.entries(object1))
+
+<hr>
+<h3>@ find average of above object</h3>
+const object1 = {
+    "vaishnavi": 25,
+    "neha": 12,
+    "sonal": 47,
+    "payal": 12,
+    "jahnavi": 0,
+    "ekta":85
+}
+console.log(Object.values(object1));
+let array = Object.values(object1);
+let sum = 0;
+for (let a of array) {
+   sum=sum+a
+}
+console.log(sum/array.length)
+
+<hr>
+<h3>@ ToDo list Project</h3>
+const userName = prompt("Enter your name");
+const alert1 = alert(`Welcome ${userName} to TODO List Project`);
+let listOptions = prompt(`Choose the option 1]new 2]list 3]delete 4]quit`)
+const originalList = ["exercise","glass of water"];
+while (listOptions !=="quit") {
+    if (listOptions == "new") {
+        const add = prompt("Enter what you want to add ?");
+       
+        
+        let updatedList = originalList.push(add);
+        const item1 = alert(`${add} is added to the list`);
+        // const display2 = alert(updatedList);
+    
+
+    } else if (listOptions == "list") {
+        for (let i = 0; i <originalList.length; i++){
+            const display3 = alert(`${i} : ${originalList[i]}`); 
+            
+        }
+       
+    
+    } else if (listOptions == "delete") {
+        const index = parseInt(prompt("Ok , enter  an index to delete ."));
+        const deleted = originalList.splice(index, 1);
+        const display4 = alert(`ok, deleted ${deleted[0]}`);
+
+    
+        
+    }
+    listOptions = prompt(`Choose the option 1]new 2]list 3]delete 4]quit`)
+}
+const display5=alert("Ok Bye !")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+<h3>@ Function</h3>
+
+function fullName(firstName, middleName, lastName) {
+    console.log(`Welcome ${firstName} ${middleName[0]} ${lastName}`);
+
+    
+}
+fullName("Vaishnavi","Ghanshyam","Thakare")
+<hr>
+function person(personName) {
+    console.log(`Welcome ${personName} to this quiz`)
+}
+person("Vaishnavi")
+<hr>
+
+function identity(person, idNumber) {
+    console.log(`${person} , your id number is ${idNumber}`)
+}
+identity("Vaishnavi",15554)
+<hr>
+
+
+
+    <script src="app.js"></script>
+    
+</body>
+</html>
