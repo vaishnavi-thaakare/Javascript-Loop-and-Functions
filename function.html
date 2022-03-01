@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function </title>
+</head>
+
+<body>
+    <h1>Function</h1>
+    function something() {
+    console.log("Hello, good morning")
+
+    }
+    something()
+
+    //call the function befpre defining it.
+    something()
+    function something() {
+    console.log("Hello, good morning")
+
+    }
+    <hr>
+    <h3>@ Function with arguments</h3>
+    function repeat(content) {
+        let i = 0;
+        while (i < 3) {
+            console.log(content.toUpperCase());
+            i++;
+        } 
+    }
+    repeat("I am here.");
+
+
+    const firstName = prompt("Enter your firstName");
+const lastName = prompt("Enter your last name");
+function fullName(x, y) {
+    const fullName = alert(`Welcome ${firstName} ${lastName} here`);
+}
+fullName(firstName,lastName)
+<hr>
+function repeat(personName, number) {
+    let result = "  ";
+    for (let i = 0; i < number; i = i + 1) {
+        result += personName;
+    }
+    console.log(result);
+}
+
+repeat("Vaishnavi", 5)
+<hr>
+<h3>@ Exercise</h3>
+function isSnakeyEyes(die1, die2) {
+    if (die1 == 1 && die2 == 1) {
+        console.log(" Snake Eyes")
+    } else {
+        console.log(" Not snake eyes.")
+    }
+}
+isSnakeyEyes(1,7)
+<hr>
+
+
+<h3>@ return keyword</h3>
+function add(x, y) {
+    var sum = x + y;
+    return sum;
+}
+let result = add(5, 8);
+console.log(result);
+add(5, 8);
+
+<hr>
+<h3>@ Exercise-1</h3>
+function multiply(x, y) {
+    return x * y;
+
+    
+}
+var result = multiply(15, 2);
+console.log(result);
+
+<hr>
+<h3>@ Exercise-2</h3>
+function isWeather(temp) {
+    if (temp > 75) {
+        return true
+    } else {
+        return false
+    }
+}
+let output = isWeather(70);
+console.log(output)
+
+<hr>
+<h3>@ Exercise-3</h3>
+function lastName(){
+    let array = [1, 7, 89, 366, 25, 36];
+    
+    if (array.length - 1) {
+        console.log("null")
+    } else {
+        console.log(array[array.length - 1])
+
+    }
+}
+lastName()
+<hr>
+<h3>@ Exercise-4</h3>
+function capitalize(str) {
+    var firstLetter = str.slice(0, 1).toUpperCase();
+    var lastLetter = str.slice(1);
+    console.log(`${firstLetter}${lastLetter}`)
+    
+}
+capitalize("eggplant")
+
+<hr>
+<h3>@ Exercise-5</h3>
+function sumArray(array) {
+    let sum = 0;
+    for (let i = 0; i < array.length; i++){
+       
+        sum = sum + i;   
+    }
+    console.log(sum);
+}
+
+var result = sumArray([1, 2, 5, 6, 8]);
+console.log(result)
+<hr>
+<h3>@ Exercise -6</h3>
+function returnDay(number) {
+    if (userInput > 7 && userInput <= 0) {
+        return null
+    } else {
+        if (userInput === 1) {
+            return "Monday";
+        } else if (userInput === 2) {
+            return "Thuesday";
+        } else if (userInput === 3) {
+            return "Wednesday";
+        } else if (userInput === 4) {
+            return "Thursday"
+        } else if (userInput === 5) {
+            return "Friday"
+        } else if (userInput === 6) {
+            return "Saturday"
+        } else if (userInput === 7){
+            return "Sunday"
+        }
+    }
+}
+let userInput = parseInt(prompt("Enter the number of your choice ?"))
+var result = returnDay(userInput);
+let finalResult = alert(result);
+
+function returnDay(d) {
+    let obj = {
+        1: 'Monday',
+        2: 'Tuesday',
+        3: 'Wednesday',
+        4: 'Thursday',
+        5: 'Friday',
+        6: 'Saturday',
+        7: 'Sunday'
+    };
+    let day = obj[d];
+    indexing property
+    console.log(day);
+
+    return day || null;
+    
+
+}
+var result = returnDay(3);
+console.log(result)
+
+<hr>
+<h3>@ Function scope</h3>
+function something() {
+    var a = 10;
+    function x() {
+        console.log("Thakare")
+    } 
+
+    console.log(a);
+    x()
+
+
+   
+    
+}
+something();
+
+
+
+let firstVariable = "Vaishnavi";
+console.log(firstVariable)
+function something() {
+    let firstVariable = "Thakare";
+    console.log(firstVariable);
+}
+something();
+console.log(firstVariable);
+
+<hr>
+<h3>@ Lexical scope</h3>
+
+function outerMost() {
+    let a = 10;
+   
+    function inner() {
+     
+        function innerMost() {
+            console.log(a);
+
+        }innerMost()
+        
+    }inner()
+
+}outerMost()
+
+<hr>
+<h3>@ Block Scope</h3>
+let r = parseInt(prompt("Enter the radius ?"));
+
+if (r > 10) {
+    let message = "We are going to calculate the area";
+    let b = 10;
+    console.log(message);
+    console.log(b);
+    console.log(r);
+}
+// console.log(message);
+// console.log(b);
+console.log(r);
+<hr>
+<h3>@ Function Expression</h3>
+function x() {
+    console.log("Successful")
+}
+x()
+
+let y = function () {
+    console.log("Interview Success")
+}
+y()
+
+<hr>
+<h3>@ Higher Order Function</h3>
+function add(x, y, operation) {
+    var sum = x + y;
+    operation(sum)
+}
+add(4, 5, divideBy2)
+function divideBy2(sum) {
+    let result = sum / 2;
+    console.log(result)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
