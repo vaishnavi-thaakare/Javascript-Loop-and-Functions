@@ -1,12 +1,13 @@
-function add(x, y, operation) {
-    var sum = x + y;
-    operation(sum)
+function errorhandlimg(str) {
+    try {
+        console.log(str.toUpperCase())
+    } catch {
+        console.log("Please enter valid input.")
+    }
 }
-add(4, 5, divideBy2)
+errorhandlimg("vaishnavi")
 
 
-function divideBy2(sum) {
-    let result = sum / 2;
-    console.log(result)
-}
+   
+
 

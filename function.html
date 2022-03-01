@@ -259,11 +259,72 @@ add(4, 5, divideBy2)
 function divideBy2(sum) {
     let result = sum / 2;
     console.log(result)
+
 }
 
 
 
 
+
+<hr>
+<h3>@ this keyword</h3>
+console.log(this)
+
+
+function something() {
+    let x = 10;
+    let y = 8;
+    let add = x + y;
+    console.log(`Sum of two number : ${x + y}`);
+    console.log(this)
+    console.log(this.x)
+    
+
+
+}
+something()
+
+
+let object = {
+    name: "vaishnavi",
+    rollNo: 52,
+    identity: function () {
+        console.log("Function inside the object");
+      
+        console.log(this.name);
+        console.log(`${this.name} is learning javascript`)
+       
+    }
+    
+   
+}
+console.log(object.name);
+console.log(object.rollNo);
+console.log(object.identity())
+
+this is not working .Also write return EGGS in method.
+let hen = {
+    userName: "helen",
+    eggCount: 0,
+    layAnEgg: function () {
+        console.log(`this is working`)
+        // this.eggCount =this.eggCount+1
+        console.log(this.userName)
+    }
+
+
+}
+
+<hr>
+<h3>@ Try and Catch Method</h3>
+function errorhandlimg(str) {
+    try {
+        console.log(str.toUpperCase())
+    } catch {
+        console.log("Please enter valid input.")
+    }
+}
+errorhandlimg("vaishnavi")
 
 
 
